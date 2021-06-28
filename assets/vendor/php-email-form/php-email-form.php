@@ -2102,10 +2102,12 @@ class PHPMailer
         $result = false;
         if ($this->SingleTo && count($toArr) > 1) {
             // echo "to address::" + $toAddr
+            print("to address" + $toAddr)
             foreach ($toArr as $toAddr) {
                 $result = $this->mailPassthru($toAddr, $this->Subject, $body, $header, $params);
                 $this->doCallback($result, [$toAddr], $this->cc, $this->bcc, $this->Subject, $body, $this->From, []);
             }
+            print("done")
         } else {
             $result = $this->mailPassthru($to, $this->Subject, $body, $header, $params);
             $this->doCallback($result, $this->to, $this->cc, $this->bcc, $this->Subject, $body, $this->From, []);
