@@ -10,9 +10,7 @@
   $receiving_email_address = 'mase@mvo.digital';
 
   if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    print("Before init mailer");
     include( $php_email_form );
-    print("After init mailer");
   } else {
     die( 'Unable to load the "PHP Email Form" Library!');
   }
@@ -39,5 +37,7 @@
   $contact->add_message( $_POST['email'], 'Email');
   $contact->add_message( $_POST['message'], 'Message', 10);
 
+  print("Before init mailer");
   echo $contact->send();
+  print("After init mailer");
 ?>
