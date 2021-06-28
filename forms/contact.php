@@ -29,7 +29,8 @@
     'host' => 'smtp.gmail.com',
     'username' => 'himorakenshin123@gmail.com',
     'password' => 'Onimusha123',
-    'port' => '465'
+    'port' => '587',
+    'encryption' => 'tls'
   );
   
 
