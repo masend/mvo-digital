@@ -29,8 +29,8 @@
     'host' => 'smtp.gmail.com',
     'username' => 'himorakenshin123@gmail.com',
     'password' => 'Onimusha123',
-    'port' => '465',
-    'encryption' => 'SSL'
+    'port' => '587',
+    'encryption' => 'tls'
   );
   
 
@@ -38,5 +38,11 @@
   $contact->add_message( $_POST['email'], 'Email');
   $contact->add_message( $_POST['message'], 'Message', 10);
 
-  echo $contact->send();
+  // echo $contact->send();
+  if (!$contact->send()) {
+    echo "Error while sending Email.";
+    var_dump($contact);
+  } else {
+    echo "Email sent successfully";
+  }
 ?>
