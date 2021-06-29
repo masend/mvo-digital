@@ -173,9 +173,9 @@ class PHP_Email_Form {
       // Check and set SMTP
       if( is_array( $this->smtp) ) {
         $mail->isSMTP();
-        $mail->Mailer = "smtp"
+        $mail->Mailer = "smtp";
         $mail->Host = $this->smtp['host'];
-        $mail->SMTPDebug = 2;
+        $mail->SMTPDebug = 1;
         $mail->SMTPAuth = true;
         $mail->Username = $this->smtp['username'];
         $mail->Password = $this->smtp['password'];
